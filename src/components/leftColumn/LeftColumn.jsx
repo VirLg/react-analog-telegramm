@@ -3,13 +3,7 @@ import RightColumn from '../rightColumn/RightColumn';
 import MiddleColumn from '../middleColumn/MiddleColumn';
 
 const LeftColumn = () => {
-  return (
-    <div>
-      LeftColumn
-      <RightColumn />
-      <MiddleColumn />
-    </div>
-  );
+  return <div>LeftColumn</div>;
 };
 
 export default LeftColumn;

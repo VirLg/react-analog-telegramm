@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import InputMessage from '../form/InputMessage';
 
 const MiddleColumn = () => {
   return (
-    <div>MiddleColumn</div>
-  )
-}
+    <div>
+      MiddleColumn
+      <InputMessage />
+    </div>
+  );
+};
 
-export default MiddleColumn
+export default MiddleColumn;
