@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const InputMessage = ({ addTask }) => {
+const InputMessage = ({ handleMessage }) => {
   const [name, setName] = useState('');
 
   const handleSbmit = e => {
     e.preventDefault();
-    addTask({ name });
+    handleMessage({ name });
     setName('');
   };
   const handleChange = e => {
