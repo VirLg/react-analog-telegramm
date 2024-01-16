@@ -8,7 +8,9 @@ const MiddleColumn = () => {
     console.log('value', value);
   };
   return (
-    <MiddleColumnDiv>
+    <MiddleColumnDiv
+      style={{ backgroundImage: `url(require("../utils/images/img.png"))` }}
+    >
       MiddleColumn
       <MiddleColumnItem />
       <MiddleColumnItem />
