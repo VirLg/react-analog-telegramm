@@ -9,7 +9,7 @@ export const ItemDiv = styled.div`
   align-items: center;
   &:hover,
   &:focus {
-    background-color: blue;
+    background-color: #e8e8e8;
   }
 `;
 export const AvatarDiv = styled.div`

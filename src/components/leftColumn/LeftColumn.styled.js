@@ -7,4 +7,5 @@ export const LeftColumnDiv = styled.div`
   padding-right: 15px;
   padding-top: 15px;
   outline: 1px solid red;
+  background-color: #f8f8f8;
 `;
