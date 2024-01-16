@@ -1,19 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeaderDiv } from './Header.styled';
-import InputMessage from '../form/InputMessage';
+
 import User from '../user/User';
 import BurgerMenu from '../menu/BurgerMenu';
+import InputSearch from '../form/InputSearch';
 
 const Header = () => {
   return (
     <div>
       <HeaderDiv>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', marginBottom: '6px' }}>
           <BurgerMenu />
           <User />
         </div>
-        <InputMessage />
+        <InputSearch />
         <NavLink to="/">left Column</NavLink>
         <NavLink to="/api/arhive">arhive</NavLink>
       </HeaderDiv>
