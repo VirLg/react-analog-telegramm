@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { InputMessageElement, MessageButton } from './InputComponent.styled';
 
 const InputMessage = ({ handleMessage }) => {
   const [name, setName] = useState('');
@@ -13,13 +14,13 @@ const InputMessage = ({ handleMessage }) => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSbmit}>
-        <input onChange={handleChange} name="name" value={name} />
+    <div>
+      <form onSubmit={handleSbmit} style={{ display: 'flex' }}>
+        <InputMessageElement onChange={handleChange} name="name" value={name} />
 
-        <button type="submit">Submit</button>
+        <MessageButton type="submit">Submit</MessageButton>
       </form>
-    </>
+    </div>
   );
 };
 
