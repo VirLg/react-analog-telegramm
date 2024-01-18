@@ -17,7 +17,6 @@ const InputMessage = ({ handleMessage }) => {
     <div>
       <form onSubmit={handleSbmit} style={{ display: 'flex' }}>
         <InputMessageElement onChange={handleChange} name="name" value={name} />
-
         <MessageButton type="submit">Submit</MessageButton>
       </form>
     </div>

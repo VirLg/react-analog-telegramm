@@ -1,14 +1,13 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { carsApi } from './rtkQuery/cars';
-import { carReduser } from './slice';
+import { chatsApi } from './rtkQuery/rtkQuery';
 
 export const store = configureStore({
   reducer: combineReducers({
-    [carsApi.reducerPath]: carsApi.reducer,
-    carState: carReduser,
+    [chatsApi.reducerPath]: chatsApi.reducer,
+    // carState: carReduser,
   }),
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware(),
-    carsApi.middleware,
+    chatsApi.middleware,
   ],
 });

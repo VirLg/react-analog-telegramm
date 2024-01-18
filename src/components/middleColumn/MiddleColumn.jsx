@@ -2,19 +2,18 @@ import React from 'react';
 import InputMessage from '../form/InputMessage';
 import MiddleColumnItem from './MiddleColumnItem';
 import { MiddleColumnDiv } from './MiddleColumn.styled';
+import { useAddMessageMutation } from '../../redux/rtkQuery/rtkQuery';
 
 const MiddleColumn = () => {
-  const handleMessage = value => {
-    console.log('value', value);
+  const [addMessage] = useAddMessageMutation();
+  const handleMessage = ({ name }) => {
+    console.log('value', name);
+    addMessage({ message: name });
   };
   return (
     <MiddleColumnDiv
       style={{ backgroundImage: `url(require("../utils/images/img.png"))` }}
     >
-      MiddleColumn
-      <MiddleColumnItem />
-      <MiddleColumnItem />
-      <MiddleColumnItem />
       <MiddleColumnItem />
       <InputMessage handleMessage={handleMessage} />
     </MiddleColumnDiv>

@@ -1,40 +1,40 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 console.log('first', process.env.REACT_APP_BASE_URL);
-export const carsApi = createApi({
-  reducerPath: 'carsRtk',
+export const chatsApi = createApi({
+  reducerPath: 'chatsRtk',
 
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_BASE_URL,
+    baseUrl: 'http://localhost:4000/api/chats',
   }),
-  tagTypes: ['TagCar'],
+  tagTypes: ['TagChats'],
   endpoints: builder => ({
-    getCars: builder.query({
-      query: () => `/catalog`,
-      providesTags: ['TagCar'],
+    getChats: builder.query({
+      query: () => `/`,
+      providesTags: ['TagChats'],
     }),
-    addCar: builder.mutation({
+    addMessage: builder.mutation({
       query: body => ({
         url: `/add`,
         method: 'POST',
         body,
       }),
-      invalidatesTags: ['TagCar'],
+      invalidatesTags: ['TagChats'],
     }),
-    deleteCar: builder.mutation({
+    deleteMessage: builder.mutation({
       query: id => ({
         url: `/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: ['TagCar'],
+      invalidatesTags: ['TagChats'],
     }),
 
-    updateFavorite: builder.mutation({
+    updateMessage: builder.mutation({
       query: ({ id, value }) => ({
         url: `/${id}`,
         method: 'PUT',
         body: {
-          favorite: value,
+          message: value,
         },
       }),
       invalidatesTags: ['TagBike'],
@@ -43,8 +43,8 @@ export const carsApi = createApi({
 });
 
 export const {
-  useGetCarsQuery,
-  useAddCarMutation,
-  useDeleteCarMutation,
-  useUpdateFavoriteMutation,
-} = carsApi;
+  useGetChatsQuery,
+  useAddMessageMutation,
+  useDeleteMessageMutation,
+  useUpdateMessageeMutation,
+} = chatsApi;

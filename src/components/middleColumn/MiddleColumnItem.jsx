@@ -1,18 +1,27 @@
 import React from 'react';
+import { useGetChatsQuery } from '../../redux/rtkQuery/rtkQuery';
 
 const MiddleColumnItem = () => {
+  const { data, error, isLoading } = useGetChatsQuery();
+  console.log('data', data);
   return (
-    <div
-      style={{
-        width: '200px',
-        height: '40px',
-        borderRadius: '8px',
-        backgroundColor: 'yellow',
-        marginTop: '6px',
-      }}
-    >
-      MiddleColumnItem
-    </div>
+    data &&
+    data.map(el => {
+      return (
+        <div
+          key={el._id}
+          style={{
+            width: '200px',
+            height: '40px',
+            borderRadius: '8px',
+            backgroundColor: 'yellow',
+            marginTop: '6px',
+          }}
+        >
+          <p> {el.message}</p>
+        </div>
+      );
+    })
   );
 };
 
