@@ -1,14 +1,19 @@
 import React from 'react';
-import { useGetChatsQuery } from '../../redux/rtkQuery/rtkQuery';
+import {
+  useDeleteMessageMutation,
+  useGetChatsQuery,
+} from '../../redux/rtkQuery/rtkQuery';
 
 const MiddleColumnItem = () => {
   const { data, error, isLoading } = useGetChatsQuery();
+  const [deleteMessage] = useDeleteMessageMutation();
   console.log('data', data);
   return (
     data &&
     data.map(el => {
       return (
         <div
+          onClick={() => deleteMessage(el._id)}
           key={el._id}
           style={{
             width: '200px',
