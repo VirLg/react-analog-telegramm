@@ -1,19 +1,28 @@
 import React from 'react';
-import {
-  useDeleteMessageMutation,
-  useGetChatsQuery,
-} from '../../redux/rtkQuery/rtkQuery';
+import { useGetChatsQuery } from '../../components/redux/rtkQuery/rtkQuery';
+import { useDispatch } from 'react-redux';
 
-const MiddleColumnItem = () => {
+import { modalShow } from '../../components/redux/slice';
+const MiddleColumnItem = ({ handleID }) => {
   const { data, error, isLoading } = useGetChatsQuery();
-  const [deleteMessage] = useDeleteMessageMutation();
+  console.log('error', error);
+  console.log('isLoading', isLoading);
+
   console.log('data', data);
+  const dispatch = useDispatch();
+
+  const handleModalShow = id => {
+    dispatch(modalShow(true));
+    console.log('handleID', id);
+
+    handleID(id);
+  };
   return (
     data &&
     data.map(el => {
       return (
         <div
-          onClick={() => deleteMessage(el._id)}
+          onClick={() => handleModalShow(el._id)}
           key={el._id}
           style={{
             width: '200px',
