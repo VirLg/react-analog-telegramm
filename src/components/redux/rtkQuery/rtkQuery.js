@@ -5,7 +5,7 @@ export const chatsApi = createApi({
   reducerPath: 'chatsRtk',
 
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:4000/api/chats',
+    baseUrl: `http://localhost:4000/api/chats`,
   }),
   tagTypes: ['TagChats'],
   endpoints: builder => ({

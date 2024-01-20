@@ -17,7 +17,6 @@ const MiddleColumn = () => {
     addMessage({ message: name });
   };
   const handleID = id => {
-    console.log('handleID!!!!!!!!!!!', id);
     setElementId(id);
   };
   return (
