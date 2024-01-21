@@ -37,7 +37,7 @@ export const chatsApi = createApi({
           message: value,
         },
       }),
-      invalidatesTags: ['TagBike'],
+      invalidatesTags: ['TagChats'],
     }),
   }),
 });

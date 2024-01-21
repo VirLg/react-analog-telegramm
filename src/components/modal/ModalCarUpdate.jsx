@@ -3,7 +3,7 @@ import InputMessage from '../form/InputMessage';
 import { useUpdateMessageMutation } from '../redux/rtkQuery/rtkQuery';
 
 const ModalCarUpdate = ({ updateElementID }) => {
-  const [updateMessage] = useUpdateMessageMutation();
+  const [updateMessage, { isLoading: isUpdating }] = useUpdateMessageMutation();
   const handleUpdate = value => {
     const { name } = value;
     updateMessage({ id: updateElementID, value: name });

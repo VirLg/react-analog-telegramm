@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { modalShow } from '../../components/redux/slice';
 const MiddleColumnItem = ({ handleID }) => {
   const { data, error, isLoading } = useGetChatsQuery();
-  console.log('error', isLoading);
+
   const dispatch = useDispatch();
 
   const handleModalShow = id => {
