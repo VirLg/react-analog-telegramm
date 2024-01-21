@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { InputMessageElement, MessageButton } from './InputComponent.styled';
 
-const InputMessage = ({ handleMessage }) => {
+const InputMessage = ({ handleMessage, handleUpdate }) => {
   const [name, setName] = useState('');
 
   const handleSbmit = e => {
     e.preventDefault();
-    handleMessage({ name });
+    handleMessage && handleMessage({ name });
+    handleUpdate && handleUpdate({ name });
     setName('');
   };
   const handleChange = e => {

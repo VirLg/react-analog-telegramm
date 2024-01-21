@@ -8,20 +8,33 @@
 //   Span,
 // } from './ModalWindow.styled';
 
+import { useState } from 'react';
 import { useDeleteMessageMutation } from '../redux/rtkQuery/rtkQuery';
+import ModalCarUpdate from './ModalCarUpdate';
+import ModalWindow from './ModalWindow';
 
 // import { useDispatch } from 'react-redux';
 
 const ModalCard = ({ elementId }) => {
-  console.log('element', elementId);
+  const [updateElementID, setUpdateElementID] = useState('');
   const [deleteMessage] = useDeleteMessageMutation();
-  //   console.log('first', deleteMessage);
+
+  const handleUpdateMessage = id => {
+    setUpdateElementID(id);
+  };
   return (
     <>
       <button type="button" onClick={() => deleteMessage(elementId)}>
         Delete
       </button>
-      <button type="button">Update</button>
+      <button type="button" onClick={() => handleUpdateMessage(elementId)}>
+        Update
+      </button>
+      {updateElementID && (
+        <ModalWindow>
+          <ModalCarUpdate updateElementID={updateElementID} />
+        </ModalWindow>
+      )}
     </>
   );
 };

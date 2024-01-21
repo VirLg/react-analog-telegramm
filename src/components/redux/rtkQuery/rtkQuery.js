@@ -46,5 +46,5 @@ export const {
   useGetChatsQuery,
   useAddMessageMutation,
   useDeleteMessageMutation,
-  useUpdateMessageeMutation,
+  useUpdateMessageMutation,
 } = chatsApi;

@@ -13,8 +13,8 @@ export const ModalWindovDiv = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  height: 50px;
+  width: 700px;
+  height: 150px;
   // width: 100%;
   border-radius: 24px;
   background-color: rgba(255, 255, 255, 1);

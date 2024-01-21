@@ -10,7 +10,7 @@ const chatSlice = createSlice({
   },
   reducers: {
     modalShow(state, action) {
-      console.log('action.payload', action.payload);
+      
       state.modal = action.payload;
     },
     // searched(state, action) {
